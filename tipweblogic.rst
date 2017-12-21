@@ -1,3 +1,5 @@
+
+
 Configurar las X para el ssh
 https://community.oracle.com/thread/571326
 https://www.cyberciti.biz/faq/how-to-fix-x11-forwarding-request-failed-on-channel-0/
