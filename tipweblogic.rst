@@ -1,4 +1,4 @@
-
+Bien
 
 Configurar las X para el ssh
 https://community.oracle.com/thread/571326
