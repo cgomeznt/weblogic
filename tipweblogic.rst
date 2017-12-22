@@ -5,6 +5,20 @@ https://community.oracle.com/thread/571326
 https://www.cyberciti.biz/faq/how-to-fix-x11-forwarding-request-failed-on-channel-0/
 https://unix.stackexchange.com/questions/131531/how-to-fix-xclock-command-not-found-error-on-oracle-linxu-6-4
 
+vi /etc/ssh/sshd_config
+   Set the following two options:
+   X11Forwarding yes
+   X11UseLocalhost no
+
+/etc/init.d/sshd reload
+
+yum install xauth
+
+yum install xorg-x11-apps.x86_64
+
+Si tienes varias ip y debes colocar el nombre del server con la Ip en el /etc/hosts
+
+============================================================================================================
 1.- https://geekflare.com/oracle-weblogic-installation-guide/
 
 2.- https://docs.oracle.com/cd/E20593_01/doc.560/e23613/config_weblogic.htm
