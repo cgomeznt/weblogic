@@ -14,7 +14,13 @@ vi /etc/ssh/sshd_config
 
 yum install xauth
 
+yum install xorg-x11-server-utils
+
 yum install xorg-x11-apps.x86_64
+
+xhost +
+
+export DISPLAY=localhost.localdomain:10.0
 
 Si tienes varias ip y debes colocar el nombre del server con la Ip en el /etc/hosts
 
