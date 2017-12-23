@@ -8,21 +8,29 @@ https://unix.stackexchange.com/questions/131531/how-to-fix-xclock-command-not-fo
 vi /etc/ssh/sshd_config
    Set the following two options:
    X11Forwarding yes
-   X11UseLocalhost no
+   # si agrego la siguiente linea debo colocar en el /etc/hosts el nombre del servidor ejemplo como este
+   # 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 srvoracle
+   # si no la agrego automatcamente el DISPLAY apunta la localhost ejemplo
+   # localhost:10.0
+   X11UseLocalhost no 
 
 /etc/init.d/sshd reload
 
-yum install xauth
+La variable DISPLAY sera controlada y administrada por el ssh, no es necesario configurarla
+
+yum install xauth # Este debe estar instalado porque si
+
+Esto es opcional
 
 yum install xorg-x11-server-utils
 
-yum install xorg-x11-apps.x86_64
+yum install xorg-x11-apps.x86_64 # esto es solo para optener el xclock
 
 xhost +
 
-export DISPLAY=localhost.localdomain:10.0
+# esta linea recuerda que hay un parametro en sshd_config #X11DisplayOffset 10, por eso que el ssh controla esta variale
 
-Si tienes varias ip y debes colocar el nombre del server con la Ip en el /etc/hosts
+export DISPLAY=localhost.localdomain:10.0
 
 ============================================================================================================
 1.- https://geekflare.com/oracle-weblogic-installation-guide/
