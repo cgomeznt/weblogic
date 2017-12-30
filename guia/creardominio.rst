@@ -64,29 +64,28 @@ Ya el dominio esta creado ahora lo inicializamos.::
 		<29/12/2017 08:26:19,600 PM BOT> <Notice> <Security> <BEA-090947> <Security post-initializing using security realm: myrealm> 
 		<29/12/2017 08:26:21,640 PM BOT> <Notice> <Security> <BEA-090082> <Security initialized using administrative security realm: myrealm> 
 		<29/12/2017 08:26:22,585 PM BOT> <Notice> <JMX> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://127.0.0.1:7010/jndi/weblogic.management.mbeanservers.runtime.> 
-
 		<29/12/2017 08:31:39,579 PM BOT> <Notice> <JMX> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://127.0.0.1:7010/jndi/weblogic.management.mbeanservers.edit.> 
 		<29/12/2017 08:31:39,600 PM BOT> <Notice> <JMX> <BEA-149512> <JMX Connector Server started at service:jmx:iiop://127.0.0.1:7010/jndi/weblogic.management.mbeanservers.domainruntime.> 
-<29/12/2017 08:31:41,424 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STANDBY.> 
-<29/12/2017 08:31:41,426 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING.> 
-<29/12/2017 08:31:41,544 PM BOT> <Notice> <Log Management> <BEA-170036> <The Logging monitoring service timer has started to check for logged message counts every 30 seconds.> 
-<29/12/2017 08:31:42,493 PM BOT> <Notice> <Log Management> <BEA-170027> <The server has successfully established a connection with the Domain level Diagnostic Service.> 
-<29/12/2017 08:31:42,774 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to ADMIN.> 
-<29/12/2017 08:31:42,857 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RESUMING.> 
-<29/12/2017 08:31:43,042 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[2]" is now listening on 10.0.2.15:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,045 PM BOT> <Warning> <Server> <BEA-002611> <The hostname "localhost", maps to multiple IP addresses: 127.0.0.1, 0:0:0:0:0:0:0:1.> 
-<29/12/2017 08:31:43,046 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[3]" is now listening on 0:0:0:0:0:0:0:1%lo:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,048 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 127.0.0.1:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,052 PM BOT> <Notice> <WebLogicServer> <BEA-000331> <Started the WebLogic Server Administration Server "AdminServer" for domain "domain" running in development mode.> 
-<29/12/2017 08:31:43,052 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[1]" is now listening on 192.168.56.10:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[2]" is now listening on 10.0.2.15:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[3]" is now listening on 0:0:0:0:0:0:0:1%lo:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 127.0.0.1:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[1]" is now listening on 192.168.56.10:7010 for protocols iiop, t3, ldap, snmp, http.> 
-<29/12/2017 08:31:43,078 PM BOT> <Notice> <WebLogicServer> <BEA-000360> <The server started in RUNNING mode.> 
-<29/12/2017 08:31:43,126 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RUNNING.> 
+	<29/12/2017 08:31:41,424 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STANDBY.> 
+	<29/12/2017 08:31:41,426 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to STARTING.> 
+	<29/12/2017 08:31:41,544 PM BOT> <Notice> <Log Management> <BEA-170036> <The Logging monitoring service timer has started to check for logged message counts every 30 seconds.> 
+	<29/12/2017 08:31:42,493 PM BOT> <Notice> <Log Management> <BEA-170027> <The server has successfully established a connection with the Domain level Diagnostic Service.> 
+	<29/12/2017 08:31:42,774 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to ADMIN.> 
+	<29/12/2017 08:31:42,857 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RESUMING.> 
+	<29/12/2017 08:31:43,042 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[2]" is now listening on 10.0.2.15:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,045 PM BOT> <Warning> <Server> <BEA-002611> <The hostname "localhost", maps to multiple IP addresses: 127.0.0.1, 0:0:0:0:0:0:0:1.> 
+	<29/12/2017 08:31:43,046 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[3]" is now listening on 0:0:0:0:0:0:0:1%lo:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,048 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 127.0.0.1:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,052 PM BOT> <Notice> <WebLogicServer> <BEA-000331> <Started the WebLogic Server Administration Server "AdminServer" for domain "domain" running in development mode.> 
+	<29/12/2017 08:31:43,052 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[1]" is now listening on 192.168.56.10:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[2]" is now listening on 10.0.2.15:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[3]" is now listening on 0:0:0:0:0:0:0:1%lo:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default" is now listening on 127.0.0.1:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,053 PM BOT> <Notice> <Server> <BEA-002613> <Channel "Default[1]" is now listening on 192.168.56.10:7010 for protocols iiop, t3, ldap, snmp, http.> 
+	<29/12/2017 08:31:43,078 PM BOT> <Notice> <WebLogicServer> <BEA-000360> <The server started in RUNNING mode.> 
+	<29/12/2017 08:31:43,126 PM BOT> <Notice> <WebLogicServer> <BEA-000365> <Server state changed to RUNNING.> 
 
-Nos vamos a la URL del servidor para abrir la consola WEB, IP_SERVER:7010/console.::
+Nos vamos a la URL del servidor para abrir la consola WEB, IP_SERVER:7010/console.
 
 .. figure:: ../images/12.png
 
