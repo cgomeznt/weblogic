@@ -137,7 +137,8 @@ Esto no es necesario, pero al que le guste colocar otro nombre al directorio pri
 
 	$ mv wls12213 Wl_12213
 	$ mv wls12213 Wl_12213
-	$ for i in `grep -r wls12213 Wl_12213 > files.txt` ; do sed -i -e 's/wls12213/Wl_12213/g'$i ; done
+	$ grep -r wls12213  * | awk -F":" '{print $1}' > files.txt
+	$ for i in `cat files.txt | uniq` ; do sed -i -e 's/wls12213/Wl_12213/g' $i ; done
 
 Ya con esto culminamos la configuracion de Weblogic.
 
