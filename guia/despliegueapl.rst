@@ -50,10 +50,7 @@ Preparamos el ambiente.::
 
 Realizamos el despliegue.::
 
-	$ java weblogic.Deployer -adminurl 192.168.56.10:7010/console -username weblogic -password weblogic -deploy /u02/EAR/sample.war 
-		weblogic.Deployer invoked with options:  -adminurl 192.168.56.10:7010/console -username weblogic -deploy /u02/EAR/sample.war
-		Unable to connect to 't3://192.168.56.10:7010/console': User failed to be authenticated.. Ensure the url represents a compatible running admin server and that the credentials are correct. If using http protocol, tunneling must be enabled on the admin server.
-		[oracle@srvoracle EAR]$ java weblogic.Deployer -adminurl 192.168.56.10:7010/console -username weblogic -password weblogic01 -deploy /u02/EAR/sample.war 
+	$ java weblogic.Deployer -adminurl 192.168.56.10:7010/console -username weblogic -password weblogic01 -deploy /u02/EAR/sample.war 
 		weblogic.Deployer invoked with options:  -adminurl 192.168.56.10:7010/console -username weblogic -deploy /u02/EAR/sample.war
 		<29/12/2017 10:07:22,787 PM BOT> <Notice> <JMX> <BEA-149535> <JMX Resiliency Activity Server=AdminServer : Initializing callbacks> 
 		<29/12/2017 10:07:22,815 PM BOT> <Notice> <JMX> <BEA-149535> <JMX Resiliency Activity Server=AdminServer : Added MBeanServerConnection in DomainRuntimeServiceMBean > 
