@@ -32,6 +32,10 @@ Probamos la aplicacion IP_SERVER:7010/sample
 .. figure:: ../images/39.png
 
 
+
+Ahora por consola bash
+++++++++++++++++++++++
+
 Eliminamos el desplieque y ahora lo vamos hacer por la consola del bash.
 
 Preparamos el ambiente.::
@@ -61,6 +65,8 @@ Realizamos el despliegue.::
 		Target state: deploy completed on Server AdminServer
 
 
-Listo
+Probamos la aplicacion IP_SERVER:7010/sample
+
+.. figure:: ../images/39.png
 
 
