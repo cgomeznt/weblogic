@@ -1,0 +1,41 @@
+
+How to enable Weblogic Server debugs using WebLogic Console?
+===============================================================
+
+This is a very useful topic for those that would like to have a first insight on why an issue is occuring.
+
+1. The easiest way to enable debug flags in WebLogic Server is to use weblogic console.
+This is done in:
+
+	Environment > Servers > MyServer > Debug > weblogic
+
+Then, enable the level of debug you need, e.g.: security, servlet, jdbc.
+
+This change does not require weblogic Server Restart.
+
+2. You need Make sure the severity is set to debug in weblogic console:
+
+
+	Environment > Servers > MyServer > Logging >Advanced > Minimum severity to log: Debug
+
+
+This change requires server restart.
+
+
+Enjoy!
+
+If you want, can edit de config file and find the tag server-debug and select the debug-scope you want enable.
+::
+
+	vi /u02/app/oracle/domain/Dadmin7001/config/config.xml
+
+	    <server-debug>
+	      <debug-scope>
+		<name>default</name>
+		<enabled>false</enabled>
+	      </debug-scope>
+	      <debug-scope>
+		<name>weblogic</name>
+		<enabled>true</enabled>
+	      </debug-scope>
+	    </server-debug>
