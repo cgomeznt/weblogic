@@ -19,29 +19,29 @@ Las actividades anteriores las puede realizar tantas veces sean necesarias para 
 
 Imágenes del WebLogic con múltiples Managed Server, con sus Datasources y Deploys.
 
-
-
-
-
-El Admins Server y los Managed Server
-
 .. figure:: ../images/40.png
-
-
-Los Datasources.
 
 .. figure:: ../images/41.png
 
-
-Los Despliegues.
+El Admins Server y los Managed Server
 
 .. figure:: ../images/42.png
 
 
-Ahora vemos las aplicaciones corriendo
+Los Datasources.
 
 .. figure:: ../images/43.png
 
 
+Los Despliegues.
+
+
 .. figure:: ../images/44.png
+
+Ahora vemos las aplicaciones corriendo
+
+
+
+
+
 
