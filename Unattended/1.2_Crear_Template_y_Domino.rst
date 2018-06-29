@@ -1,0 +1,39 @@
+Creando un Template desde un Dominio existente
+===============================================
+
+vi CopyDomainWSLT.py 
+
+
+# Read the domain from the domain home located at /domains/mydomain
+readDomain('/u05/app/oracle/domain/D7022')
+
+# Create the template jar mydomain.jar in /templates
+writeTemplate('/u01/app/oracle/middleware/wlserver/common/templates/wls/copyD7022.jar')
+
+
+Crear un Domino desde un Template
+=================================
+
+vi basicWLSDomainClone.py
+
+readTemplate("/u01/app/oracle/middleware/wlserver/common/templates/wls/copyD7022.jar")
+
+cd('Servers/AdminServer')
+set('ListenAddress','')
+set('ListenPort', 7021)
+
+cd('/')
+cd('Security/base_domain/User/weblogic')
+cmo.setPassword('weblogic01')
+
+
+setOption('OverwriteDomain', 'true')
+writeDomain('/u01/app/oracle/middleware/user_projects/domains/D7021')
+closeTemplate()
+
+
+exit()
+
+
+
+
