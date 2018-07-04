@@ -1,0 +1,33 @@
+Environment Setup - Just open a command prompt and run the 
+<DOMAIN_HOME>/bin/setDomainEnv.cmd (sh) script.  This sets up all the environment variables for you.
+
+Start WLST - Just type java weblogic.WLST
+
+
+==============================================================================================================
+source /u01/app/oracle/middleware/wlserver/server/bin/setWLSEnv.sh
+
+java weblogic.WLST
+
+print 'connecting to admin server....'
+
+connect( 'weblogic', 'weblogic01', 't3://localhost:7021', adminServerName='AdminServer' )
+
+print 'deploying....'
+
+deploy('CONSIS', '/var/lib/docker/scm/EAR_Weblogic/7022/CONSIS.ear', targets='AdminServer')
+
+startApplication('CONSIS')
+
+print 'stopping and undeploying ....'
+
+stopApplication('CONSIS')
+
+undeploy('CONSIS')
+
+print 'disconnecting from admin server....'
+
+disconnect()
+
+exit()
+==============================================================================================================

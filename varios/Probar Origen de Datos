@@ -1,0 +1,21 @@
+Probar Origen de Datos
+========================
+
+Ir al URL IP_Server:puerto/console
+
+Estructura de Dominio
+ -> Servicios
+    -> Orígenes de Datos
+
+Tab Configuracion
+
+Seleccionar Orígenes de Datos (Filtrado: Existen Más Columnas)
+    en este ejemplo se llama jdbc/Datasource-GS
+
+hacer click sobre el Orígenes de Datos llamado jdbc/Datasource-GS
+
+Tab Supervisión
+  -> Tab Prueba
+     En Probar Origen de Datos (Filtrado: Existen Más Columnas) seleccionar el servidor
+     Hacer click sobre el boton "Probar Origen de Datos"
+     Si es exitoso se muestra en la parte superior un mensaje en verde "/: Correcto La prueba jdbc/Datasource-GS en el servidor AdminServer se ha realizado correctamente."

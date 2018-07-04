@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<domain xmlns="http://xmlns.oracle.com/weblogic/domain" xmlns:sec="http://xmlns.oracle.com/weblogic/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wls="http://xmlns.oracle.com/weblogic/security/wls" xsi:schemaLocation="http://xmlns.oracle.com/weblogic/security/wls http://xmlns.oracle.com/weblogic/security/wls/1.0/wls.xsd http://xmlns.oracle.com/weblogic/domain http://xmlns.oracle.com/weblogic/1.0/domain.xsd http://xmlns.oracle.com/weblogic/security/xacml http://xmlns.oracle.com/weblogic/security/xacml/1.0/xacml.xsd http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator/1.0/passwordvalidator.xsd http://xmlns.oracle.com/weblogic/security http://xmlns.oracle.com/weblogic/1.0/security.xsd">
+  <name>D7022</name>
+  <domain-version>12.2.1.3.0</domain-version>
+  <security-configuration>
+    <name>D7022</name>
+    <realm>
+      <sec:authentication-provider xsi:type="wls:default-authenticatorType">
+        <sec:name>DefaultAuthenticator</sec:name>
+      </sec:authentication-provider>
+      <sec:authentication-provider xsi:type="wls:default-identity-asserterType">
+        <sec:name>DefaultIdentityAsserter</sec:name>
+        <sec:active-type>AuthenticatedUser</sec:active-type>
+        <sec:active-type>weblogic-jwt-token</sec:active-type>
+      </sec:authentication-provider>
+      <sec:role-mapper xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-role-mapperType">
+        <sec:name>XACMLRoleMapper</sec:name>
+      </sec:role-mapper>
+      <sec:authorizer xmlns:xac="http://xmlns.oracle.com/weblogic/security/xacml" xsi:type="xac:xacml-authorizerType">
+        <sec:name>XACMLAuthorizer</sec:name>
+      </sec:authorizer>
+      <sec:adjudicator xsi:type="wls:default-adjudicatorType">
+        <sec:name>DefaultAdjudicator</sec:name>
+      </sec:adjudicator>
+      <sec:credential-mapper xsi:type="wls:default-credential-mapperType">
+        <sec:name>DefaultCredentialMapper</sec:name>
+      </sec:credential-mapper>
+      <sec:cert-path-provider xsi:type="wls:web-logic-cert-path-providerType">
+        <sec:name>WebLogicCertPathProvider</sec:name>
+      </sec:cert-path-provider>
+      <sec:cert-path-builder>WebLogicCertPathProvider</sec:cert-path-builder>
+      <sec:name>myrealm</sec:name>
+      <sec:password-validator xmlns:pas="http://xmlns.oracle.com/weblogic/security/providers/passwordvalidator" xsi:type="pas:system-password-validatorType">
+        <sec:name>SystemPasswordValidator</sec:name>
+        <pas:min-password-length>8</pas:min-password-length>
+        <pas:min-numeric-or-special-characters>1</pas:min-numeric-or-special-characters>
+      </sec:password-validator>
+    </realm>
+    <default-realm>myrealm</default-realm>
+    <credential-encrypted>{AES}txIG6XNBiOYoJIlhVdkWqsuWzxXvVsO3OUVizf83xEoeuLE452nJCCr1tRwVDFBZOivWrwX6d5hTEzrOwfYw9WJFwMAGiCZlnDw76ythfI8NiiUOh4VIPBqqa32dln94</credential-encrypted>
+    <node-manager-username>weblogic</node-manager-username>
+    <node-manager-password-encrypted>{AES}FjfdvcWhaHAEbFeEjYWFV8GmVdEVnnq4QABBDyFbvv8=</node-manager-password-encrypted>
+  </security-configuration>
+  <server>
+    <name>AdminServer</name>
+    <ssl>
+      <name>AdminServer</name>
+      <listen-port>7002</listen-port>
+    </ssl>
+    <listen-port>7022</listen-port>
+    <listen-address></listen-address>
+  </server>
+  <embedded-ldap>
+    <name>D7022</name>
+    <credential-encrypted>{AES}zCbtu6L0BW2rCILOe71WJxzGcjI7qAzGbFPSgRpTKIW9CEaL2mLUi+72SIXZ5scm</credential-encrypted>
+  </embedded-ldap>
+  <configuration-version>12.2.1.3.0</configuration-version>
+  <app-deployment>
+    <name>CONSIS</name>
+    <target>AdminServer</target>
+    <module-type>ear</module-type>
+    <source-path>/scm/EAR_Weblogic/7022/CONSIS.ear</source-path>
+    <deployment-order>100</deployment-order>
+    <security-dd-model>DDOnly</security-dd-model>
+    <staging-mode xsi:nil="true"></staging-mode>
+    <plan-staging-mode xsi:nil="true"></plan-staging-mode>
+    <cache-in-app-directory>false</cache-in-app-directory>
+  </app-deployment>
+  <web-app-container>
+    <relogin-enabled>false</relogin-enabled>
+    <allow-all-roles>false</allow-all-roles>
+    <filter-dispatched-requests-enabled>false</filter-dispatched-requests-enabled>
+    <overload-protection-enabled>false</overload-protection-enabled>
+    <x-powered-by-header-level>NONE</x-powered-by-header-level>
+    <mime-mapping-file>./config/mimemappings.properties</mime-mapping-file>
+    <optimistic-serialization>false</optimistic-serialization>
+    <rtexprvalue-jsp-param-name>false</rtexprvalue-jsp-param-name>
+    <client-cert-proxy-enabled>false</client-cert-proxy-enabled>
+    <http-trace-support-enabled>false</http-trace-support-enabled>
+    <weblogic-plugin-enabled>false</weblogic-plugin-enabled>
+    <auth-cookie-enabled>true</auth-cookie-enabled>
+    <wap-enabled>false</wap-enabled>
+    <post-timeout-secs>30</post-timeout-secs>
+    <max-post-time-secs>-1</max-post-time-secs>
+    <max-post-size>-1</max-post-size>
+    <work-context-propagation-enabled>true</work-context-propagation-enabled>
+    <jsp-compiler-backwards-compatible>false</jsp-compiler-backwards-compatible>
+    <show-archived-real-path-enabled>true</show-archived-real-path-enabled>
+    <change-session-id-on-authentication>true</change-session-id-on-authentication>
+    <gzip-compression>
+      <gzip-compression-enabled>false</gzip-compression-enabled>
+      <gzip-compression-min-content-length>2048</gzip-compression-min-content-length>
+      <gzip-compression-content-type>text/html</gzip-compression-content-type>
+      <gzip-compression-content-type>text/xml</gzip-compression-content-type>
+      <gzip-compression-content-type>text/plain</gzip-compression-content-type>
+    </gzip-compression>
+  </web-app-container>
+  <admin-server-name>AdminServer</admin-server-name>
+  <jdbc-system-resource>
+    <name>jdbc/Datasource-GS</name>
+    <target>AdminServer</target>
+    <descriptor-file-name>jdbc/jdbc2fDatasource-GS-2784-jdbc.xml</descriptor-file-name>
+  </jdbc-system-resource>
+  <jdbc-system-resource>
+    <name>jdbc/Datasource-PE</name>
+    <target>AdminServer</target>
+    <descriptor-file-name>jdbc/jdbc2fDatasource-PE-3049-jdbc.xml</descriptor-file-name>
+  </jdbc-system-resource>
+</domain>

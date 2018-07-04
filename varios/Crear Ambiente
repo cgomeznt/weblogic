@@ -1,0 +1,69 @@
+Para crear un nueva instancia. utilizaremos como ejemplo la master de Asesuisa
+Crear el ambiente para la Gerencia de OYC de la rama nueva del cliente Asesuisa.
+
+Estan pidiendo crear un nuevo ambiente, buscamos un puerto que este disponible en el servidor srvscm04 y en este caso fue el 7021. Utilizamos como pivote toda la configuracion del 7044 porque es uno de los mas utilizados.
+
+$ workspace 
+
+[oracle@srvscm04 workspace]$ ls
+Acsel-e				AcseleV13.8-Asesuisa-20170316		  AcseleV13.8-Interseguro-VidaProduccion
+Acsele12.9_RimacWorksite2	AcseleV13.8-Asesuisa-20170601		  AcseleV13.8-Interseguro-VidaTradicional
+AcseleV11.9.10			AcseleV13.8-Asesuisa-20171212		  AcseleV13.8-LBC-20160926
+AcseleV12.9RC_Interseguro	AcseleV13.8-Asesuisa-20171219		  AcseleV13.8--POC-BiceVida-JBoss-AWS
+AcseleV13.6			AcseleV13.8-Asesuisa-20171225		  AcseleV13.8_Rimac_20170109
+AcseleV13.8			AcseleV13.8-AXA				  AcseleV13.8-RIMAC-20170121
+AcseleV13.8-ALFA		AcseleV13.8-AXA-20171020		  AcseleV13.8-RIMAC-20170124
+AcseleV13.8-ALFA_20170519	AcseleV13.8AXAPreProduccion-20161124	  AcseleV13.8-Rural-20160715
+AcseleV13.8-ALFA_20170630	AcseleV13.8AXAPreProduccion-20170306	  AcseleV13.8-Rural-20170109
+AcseleV13.8-ALFA_Certificacion	AcseleV13.8-AXAProd			  AcseleV13.8-Rural-FASEII-20170214
+AcseleV13.8-ALFA-Prod-20170328	AcseleV13.8-AXAProd-LA-201608016	  AcseleV13.8-Rural-Produccion-20170109
+AcseleV13.8-ALFA-REL-20161014	AcseleV13.8-AXAProd-ReasMult-LA-20161226  git
+AcseleV13.8-Alfa-S4-20160511	AcseleV13.8-BiceVida-20170818		  ramas_srvscm04.txt
+AcseleV13.8-Asesuisa-20160722	AcseleV13.8-Interseguro-20160618
+AcseleV13.8-Asesuisa-20160922	AcseleV13.8-Interseguro-PreProduccion
+
+$ cd AcseleV13.8-Asesuisa-20160722/scm
+[oracle@srvscm04 AcseleV13.8-Asesuisa-20160722/scm]$ 
+
+[oracle@srvscm04 scm]$ cp -rv Generate-SchemaTool-jar_7044/ Generate-SchemaTool-jar_7021/
+
+[oracle@srvscm04 Generate-SchemaTool-jar_7021]$ vi build.properties
+    acsele.external.file=//u02/app/oracle/domain/external/AcseleConfigurationfile_7044_ASESUISA_13.8.txt
+    to
+    acsele.external.file=//u02/app/oracle/domain/external/AcseleConfigurationfile_7021_ASESUISA_13.8.txt
+
+[oracle@srvscm04 scm]$ cd Make_EAR/
+
+[oracle@srvscm04 Make_EAR]$ cp -rv Weblogic_ASESUISA_7044/ Weblogic_ASESUISA_7021/
+
+[oracle@srvscm04 Weblogic_ASESUISA_7021]$ vi build.xml 
+    <exec executable="${dir.domain}/domain_7044/bin/startWebLogic.cmd"/>
+    to
+    <exec executable="${dir.domain}/domain_7021/bin/startWebLogic.cmd"/>
+
+[oracle@srvscm04 Weblogic_ASESUISA_7021]$ vi build.properties
+    acsele.external.file=//u02/app/oracle/domain/external/AcseleConfigurationfile_7044_ASESUISA_13.8.txt
+    dir.build=/home/scm/svn/workspace/AcseleV13.8-Asesuisa-20160722/scm/Make_EAR/Weblogic_ASESUISA_7044/build
+    dir.dist=/home/scm/svn/workspace/AcseleV13.8-Asesuisa-20160722/scm/Make_EAR/Weblogic_ASESUISA_7044/dist
+    dir.mobile=/home/scm/svn/workspace/AcseleV13.8-Asesuisa-20160722/scm/Make_EAR/Weblogic_ASESUISA_7044/Mobile
+    set.scm.configuracion_destino=7021
+    core.lib.separated.dir=/u02/app/oracle/domain/D7021/lib
+    to
+    acsele.external.file=//u02/app/oracle/domain/external/AcseleConfigurationfile_7021_ASESUISA_13.8.txt
+    dir.build=/home/scm/svn/workspace/AcseleV13.8-Asesuisa-20160722/scm/Make_EAR/Weblogic_ASESUISA_7021/build
+    dir.dist=/home/scm/svn/workspace/AcseleV13.8-Asesuisa-20160722/scm/Make_EAR/Weblogic_ASESUISA_7021/dist
+    dir.mobile=/home/scm/svn/workspace/AcseleV13.8-Asesuisa-20160722/scm/Make_EAR/Weblogic_ASESUISA_7021/Mobile
+    set.scm.configuracion_destino=7021
+    core.lib.separated.dir=/u02/app/oracle/domain/D7021/lib
+
+[oracle@srvscm04 Weblogic_ASESUISA_7021]$ vi make.sh
+    port=7044
+    to
+    port=7021
+
+# Dedes asegurar que sea con una configuracion actualizada.
+[oracle@srvscm04 external]$ cp AcseleConfigurationfile_7044_ASESUISA_13.8.txt AcseleConfigurationfile_7021_ASESUISA_13.8.txt
+
+
+
+

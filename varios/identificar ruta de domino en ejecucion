@@ -1,0 +1,26 @@
+Esto es para identificar segun un puerto que se este ejecutando, en que ruta esta el dominio de WebLogic
+
+[oracle@srvscm04 workspace]$ netstat -natp | grep 7044
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 192.168.0.4:60976           192.168.0.4:7044            TIME_WAIT   -                   
+tcp        0      0 ::ffff:192.168.0.4:7044     :::*                        LISTEN      29720/java          
+tcp        0      0 ::ffff:172.17.0.1:7044      :::*                        LISTEN      29720/java          
+tcp        0      0 ::1:7044                    :::*                        LISTEN      29720/java          
+tcp        0      0 ::ffff:192.168.121.18:7044  :::*                        LISTEN      29720/java          
+tcp        0      0 ::ffff:127.0.0.1:7044       :::*                        LISTEN      29720/java          
+tcp        0      0 fe80::222:19ff:fead:28:7044 :::*                        LISTEN      29720/java          
+[oracle@srvscm04 workspace]$ 
+[oracle@srvscm04 workspace]$ ps -ef | grep 29720
+oracle   20174 18126  0 10:31 pts/5    00:00:00 grep 29720
+oracle   29720 29655  5 09:49 ?        00:02:26 /u02/app/product/jdk1.7.0_79/bin/java -server -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=9044,server=y,suspend=n -Djava.compiler=NONE -Xms1024m -Xmx10240m -XX:+UseParallelGC -XX:ParallelGCThreads=4 -Dweblogic.client.socket.ConnectTimeout=500 -Dwicket.configuration=deployment -XX:CompileThreshold=8000 -XX:PermSize=1024m -XX:MaxPermSize=4096m -Dweblogic.Name=AdminServer -Djava.security.policy=/u02/app/product/W_12c/wlserver/server/lib/weblogic.policy -Xverify:none -Djava.endorsed.dirs=/u02/app/product/jdk1.7.0_79/jre/lib/endorsed:/u02/app/product/W_12c/wlserver/../oracle_common/modules/endorsed -ea -da:com.bea... -da:javelin... -da:weblogic... -ea:com.bea.wli... -ea:com.bea.broker... -ea:com.bea.sbconsole... -Dwls.home=/u02/app/product/W_12c/wlserver/server -Dweblogic.home=/u02/app/product/W_12c/wlserver/server -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true weblogic.Server
+[oracle@srvscm04 workspace]$ 
+[oracle@srvscm04 workspace]$ 
+[oracle@srvscm04 workspace]$ ps -ef | grep 29655
+oracle   20268 18126  0 10:31 pts/5    00:00:00 grep 29655
+oracle   29655     1  0 09:49 ?        00:00:00 /bin/sh /u02/app/oracle/domain/D7044//bin/startWebLogic.sh
+oracle   29720 29655  5 09:49 ?        00:02:26 /u02/app/product/jdk1.7.0_79/bin/java -server -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=9044,server=y,suspend=n -Djava.compiler=NONE -Xms1024m -Xmx10240m -XX:+UseParallelGC -XX:ParallelGCThreads=4 -Dweblogic.client.socket.ConnectTimeout=500 -Dwicket.configuration=deployment -XX:CompileThreshold=8000 -XX:PermSize=1024m -XX:MaxPermSize=4096m -Dweblogic.Name=AdminServer -Djava.security.policy=/u02/app/product/W_12c/wlserver/server/lib/weblogic.policy -Xverify:none -Djava.endorsed.dirs=/u02/app/product/jdk1.7.0_79/jre/lib/endorsed:/u02/app/product/W_12c/wlserver/../oracle_common/modules/endorsed -ea -da:com.bea... -da:javelin... -da:weblogic... -ea:com.bea.wli... -ea:com.bea.broker... -ea:com.bea.sbconsole... -Dwls.home=/u02/app/product/W_12c/wlserver/server -Dweblogic.home=/u02/app/product/W_12c/wlserver/server -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true weblogic.Server
+[oracle@srvscm04 workspace]$ 
+[oracle@srvscm04 workspace]$ 
+[oracle@srvscm04 workspace]$ 
+

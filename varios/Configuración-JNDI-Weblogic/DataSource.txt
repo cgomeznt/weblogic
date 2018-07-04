@@ -1,0 +1,20 @@
+Deben cambiar esto si no quiere utilizar el Acsele Configuration File:
+ 
+<bean id="dataSourceGlobalUser" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+      destroy-method="close">
+    <property name="driverClass" value="${driverDB}" />
+    <property name="jdbcUrl" value="${servidorDB}" />
+    <property name="user" value="${userDB}" />
+    <property name="password" value="${passwDB}" />
+    <property name="acquireIncrement" value="${acquireIncrement}" />
+    <property name="minPoolSize" value="${minPoolSize}" />
+    <property name="maxPoolSize" value="${maxPoolSize}" />
+    <property name="maxIdleTime" value="${maxIdleTime}" />
+</bean>
+ 
+ 
+Por este, que utiliza el DataSource desde el WebLogic:
+ 
+<bean id="dataSourceGlobalUser" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="jdbc/Datasource-GS"/>
+</bean>
