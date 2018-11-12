@@ -26,4 +26,10 @@ debugFlag="true"
 export debugFlag
 
 
+Debe ver algo así
++++++++++++++++++++++
+
+/u02/app/product/jdk1.7.0_79/bin/java -server -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=9035,server=y,suspend=n -Djava.compiler=NONE  -Xms1024m -Xmx10240m -XX:ParallelGCThreads=4 -Dwicket.configuration=deployment -XX:CompileThreshold=8000 -XX:PermSize=512m  -XX:MaxPermSize=3072m -Dweblogic.Name=AdminServer -Djava.security.policy=/u02/app/product/W_12c/wlserver/server/lib/weblogic.policy  -Xverify:none -Djava.endorsed.dirs=/u02/app/product/jdk1.7.0_79/jre/lib/endorsed:/u02/app/product/W_12c/wlserver/../oracle_common/modules/endorsed  -ea -da:com.bea... -da:javelin... -da:weblogic... -ea:com.bea.wli... -ea:com.bea.broker... -ea:com.bea.sbconsole... -Dwls.home=/u02/app/product/W_12c/wlserver/server -Dweblogic.home=/u02/app/product/W_12c/wlserver/server     -Djava.awt.headless=true -Dweblogic.utils.cmm.lowertier.ServiceDisabled=true  weblogic.Server
+
+
 
