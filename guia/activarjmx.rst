@@ -23,14 +23,3 @@ Ahora para hacer las pruebas utilizamos el cliente **cmdline-jmxclient-0.10.3.ja
 	max: 490209280
 	used: 420348728
 
-
-
-
-# Monitoring JMX
-JAVA_OPTIONS="$JAVA_OPTIONS -Djava.rmi.server.hostname=192.168.1.11"
-JAVA_OPTIONS="$JAVA_OPTIONS -Dcom.sun.management.jmxremote"
-JAVA_OPTIONS="$JAVA_OPTIONS -Dcom.sun.management.jmxremote.port=6065"
-JAVA_OPTIONS="$JAVA_OPTIONS -Dcom.sun.management.jmxremote.ssl=false"
-JAVA_OPTIONS="$JAVA_OPTIONS -Dcom.sun.management.jmxremote.authenticate=false"
-export JAVA_OPTIONS
-
