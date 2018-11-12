@@ -8,6 +8,7 @@
 * [Activacion Debug en WLS](guia/Activacion_Debug_en_WLS.rst) 
 * [Archivos de configuracion](guia/Archivos_de_configuracion.rst) 
 * [Activacion de Puerto Debug en WLS](guia/Activacion_de_Puerto_Debug_en_WLS.rst)
+* [Activar el JMX remote](guia/activarjmx.rst)
 * [Borrar Cache](guia/Borrar_Cache.rst)
 * [Encryption in Weblogic](Encryption_in_Weblogic.rst)
 * [jconsole Weblogic](guia/jconsole_Weblogic.rst)
