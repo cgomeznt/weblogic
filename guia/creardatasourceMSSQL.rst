@@ -5,10 +5,13 @@ Lo primero que debemos hacer es descargar el driver **mssql-jdbc-7.0.0.jre8.jar*
 
 Ese driver lo copiamos en el "/u06/app/product/wls12213/wlserver/server/lib/"
 
-Luego debemos editar el "setDomainEnv.sh" y agregarlo en el "CLASSPATH::
+Luego debemos editar el **setDomainEnv.sh** y agregarlo en el **CLASSPATH** ::
 
 
 	CLASSPATH="${CLASSPATH}:/u06/app/product/wls12213/wlserver/server/lib/mssql-jdbc-7.0.0.jre8.jar"
+
+.. figure:: ../images/53.png
+
 
 Ingresamos a la consola del Weblogic.:
 
